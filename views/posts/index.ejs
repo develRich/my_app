@@ -11,6 +11,20 @@
       <% include partials/top %>
       <!-- main start -->
 
+      <!-- views/posts/index.ejs -->
+      <div class="index">
+        <a href="/posts/new"><input type="button" value="New"></a>
+          <ul>
+            <li class="header">Title<span>Date</span></li>
+            <% data.forEach(function(e){ %>
+              <li>
+                <a href="/posts/<%= e._id%>"><%= e.title %> </a>
+                <span><%= e.createdAt.toLocaleDateString() %> </span>
+              </li>
+            <% }) %>
+          </ul>
+      </div>
+
       <!-- main end -->
     </div>
 
